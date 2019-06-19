@@ -1,0 +1,10 @@
+function F=LineFocus(A1,A2,B1,B2)
+[a1,b1,c1] = PointToLine(A1,A2);
+[a2,b2,c2] = PointToLine(B1,B2);
+A = [a1,b1; a2,b2];
+b = [c1; c2];
+F = (A\b).';
+function [a,b,c] = PointToLine(A,B)
+a=B(2)-A(2);
+b=A(1)-B(1);
+c=A(1)*B(2)-A(2)*B(1);
